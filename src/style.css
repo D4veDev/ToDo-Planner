@@ -1,0 +1,128 @@
+body {
+    background-color: darkcyan;
+}
+
+.taskWrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    align-items: center;
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 15px;
+    min-width: 60vw;
+    box-shadow: 0px 0px 5px #000;
+    background-color: cornflowerblue;
+}
+
+.taskWrapper h2 {
+    margin-left: 30px;
+    font-size: 2em;
+    font-stretch: condensed;
+}
+
+.taskWrapper button {
+    padding: 15px 55px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: lightcoral;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.taskWrapper button:active {
+    background-color: coral;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.description {
+    position: relative;
+    padding: 20px;
+    min-width: 60vw;
+    font-size: 1.4em;
+    text-align: center;
+    background-color: lightcoral;
+    border: 1px solid black;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    overflow: hidden;
+    transform: translateY(-100%);
+    animation: slide-in 0.5s forwards;
+    z-index: -1;
+}
+
+.description h1 {
+    max-width: 80%;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+input[type="checkbox"] {
+    transform: scale(2);
+    cursor: pointer;
+}
+
+.left {
+    display: flex;
+}
+
+.right {
+    width: auto;
+}
+
+.right button {
+    margin: 0 10px 0;
+}
+
+.done {
+    color: grey;
+    text-decoration: line-through;
+    width: 100%;
+}
+
+.ongoing {
+    color: black;
+    width: 100%;
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    min-height: 75vh;
+    border: 1px solid black;
+}
+
+.form {
+    margin: 0 auto 2vh auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 80vw;
+    min-height: 10vh;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-size: 1.5em;
+}
+
+.form input {
+    margin: 0 10px 0 10px;
+}
