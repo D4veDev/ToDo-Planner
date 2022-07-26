@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 export const Task = (props) => {
-    const [toggleDesc, setToggleDesc] = React.useState(false);
-    const [toggleComplete, setToggleComplete] = React.useState(false);
+    const [toggleDesc, setToggleDesc] = useState(false);
+    const [toggleComplete, setToggleComplete] = useState(false);
 
     const handleClick = () => {
         setToggleComplete(!toggleComplete);

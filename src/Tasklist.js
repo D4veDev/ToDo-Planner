@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Task } from "./Task";
 import { Taskform } from "./Taskform";
 
 export const Tasklist = (props) => {
-    const [taskList, setTaskList] = React.useState([]);
+    const [taskList, setTaskList] = useState([]);
 
     const deleteTask = (index) => {
         const newTaskList = taskList.filter((task) => task.key !== index);

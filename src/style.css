@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
 body {
-    background-color: darkcyan;
+    background-color: teal;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bad Script', cursive;
+}
+
+.header {
+    color: black;
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
 }
 
 .taskWrapper {
@@ -12,55 +24,67 @@ body {
     padding: 20px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    width: 70vw;
     margin-top: 15px;
-    min-width: 60vw;
     box-shadow: 0px 0px 5px #000;
     background-color: cornflowerblue;
+    word-wrap: break-word;
 }
 
 .taskWrapper h2 {
     margin-left: 30px;
     font-size: 2em;
-    font-stretch: condensed;
 }
 
 .taskWrapper button {
-    padding: 15px 55px;
+    padding: 1vw;
+    margin: 10px;
     font-size: 24px;
     text-align: center;
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: lightcoral;
+    background-color: teal;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
 }
 
 .taskWrapper button:active {
-    background-color: coral;
+    background-color: powderblue;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
 .description {
+    word-wrap: break-word;
     position: relative;
     padding: 20px;
-    min-width: 60vw;
+    width: 70vw;
     font-size: 1.4em;
     text-align: center;
-    background-color: lightcoral;
-    border: 1px solid black;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite, slide-in 0.5s forwards;
+    box-shadow: 0px 0px 5px #000;
+    border-top: 2px solid #000;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     overflow: hidden;
     transform: translateY(-100%);
-    animation: slide-in 0.5s forwards;
     z-index: -1;
 }
 
-.description h1 {
-    max-width: 80%;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 @keyframes slide-in {
@@ -72,29 +96,28 @@ body {
 input[type="checkbox"] {
     transform: scale(2);
     cursor: pointer;
+    height: 100%;
 }
 
 .left {
     display: flex;
+    max-width: 60%;
+    align-items: center;
 }
 
 .right {
     width: auto;
 }
 
-.right button {
-    margin: 0 10px 0;
-}
-
 .done {
     color: grey;
     text-decoration: line-through;
-    width: 100%;
+    max-width: 100%;
 }
 
 .ongoing {
     color: black;
-    width: 100%;
+    max-width: 100%;
 }
 
 .taskList {
@@ -105,17 +128,14 @@ input[type="checkbox"] {
     margin: auto;
     width: 80%;
     min-height: 75vh;
-    border: 1px solid black;
 }
 
 .form {
     margin: 0 auto 2vh auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     max-width: 80vw;
-    min-height: 10vh;
     background-color: cornflowerblue;
     border: 1px solid black;
     border-top-right-radius: 25px;
@@ -126,3 +146,16 @@ input[type="checkbox"] {
 .form input {
     margin: 0 10px 0 10px;
 }
+
+/* Add a 360 degree rotation animation when addButton is hovered and 360 degree backward when unhovered */
+.add-task-button {
+    /* add a mouse event */
+    cursor: pointer;
+    /* add a 360 degree rotation animation */
+    transition: transform 0.8s ease-in-out; 
+}
+
+.add-task-button:hover {
+    transform: rotate(360deg);
+}
+

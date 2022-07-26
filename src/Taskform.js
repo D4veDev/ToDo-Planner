@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const Taskform = (props) => {
     //this component will be used to create a new task
 
-    const [taskName, setTaskName] = React.useState("");
-    const [taskDescription, setTaskDescription] = React.useState("");
-    const [addTask, setAddTask] = React.useState(false);
+    const [taskName, setTaskName] = useState("");
+    const [taskDescription, setTaskDescription] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +20,7 @@ export const Taskform = (props) => {
             height="64"
             viewBox="0 0 64 64"
             onClick={handleSubmit}
-            className={addTask ? "addButton" : "addButtonDisabled"}
+            className="add-task-button"
         >
             <path
                 fill="#85cbf8"
@@ -55,28 +54,26 @@ export const Taskform = (props) => {
     );
 
     return (
-        <div className="formWrapper">
-            <form onSubmit={handleSubmit} className="form">
-                <section>
-                    <label htmlFor="taskName">Task name:</label>
-                    <input
-                        type="text"
-                        onChange={(e) => {
-                            setTaskName(e.target.value);
-                        }}
-                        id="taskName"
-                    />
-                </section>
-                {submitButton}
-                <section>
-                    <label htmlFor="taskDescription">Task description:</label>
-                    <input
-                        type="text"
-                        onChange={(e) => setTaskDescription(e.target.value)}
-                        id="taskDescription"
-                    />
-                </section>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit} className="form">
+            <section>
+                <label htmlFor="taskName">Task name:</label>
+                <input
+                    type="text"
+                    onChange={(e) => {
+                        setTaskName(e.target.value);
+                    }}
+                    id="taskName"
+                />
+            </section>
+            {submitButton}
+            <section>
+                <label htmlFor="taskDescription">Task description:</label>
+                <input
+                    type="text"
+                    onChange={(e) => setTaskDescription(e.target.value)}
+                    id="taskDescription"
+                />
+            </section>
+        </form>
     );
 };
